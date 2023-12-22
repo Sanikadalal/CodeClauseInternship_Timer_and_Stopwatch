@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Geologica:wght@200&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: black;
+  color: #fff;
+  font-family: "Geologica", sans-serif;
+}
+body {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.heading {
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 3rem;
+}
+.main {
+  display: flex;
+  justify-content: space-around;
+  font-size: 2.5rem;
+}
+.main a {
+  text-decoration: none;
+  width: 20%;
+  text-align: center;
+  height: 3.5rem;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 2rem;
+  padding-top: 5px;
+}
+.active {
+  background-color: #fff;
+  color: black;
+}
+
+/* stopwatch  */
+section {
+  display: flex;
+}
+
+.outer-circle {
+  background-color: #fff;
+  width: 21rem;
+  height: 21rem;
+  border-radius: 50%;
+  margin: 50px auto;
+  padding: 0.5rem 0;
+}
+
+.animation-bg {
+  background: linear-gradient(
+    -45deg,
+    #ee7752,
+    yellow,
+    red,
+    purple,
+    #e73c7e,
+    #23a6d5,
+    #23d5ab
+  );
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.inner-circle {
+  background-color: #000;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  margin: auto;
+  position: relative;
+}
+.time {
+  position: absolute;
+  top: 8.5rem;
+  left: 2rem;
+  font-size:2.7rem;
+}
+
+/* buttons  */
+
+.button {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 7rem 0;
+  position: absolute;
+  right: 18rem;
+}
+.button button {
+  width: 8rem;
+  height: 3rem;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  cursor: pointer;
+  font-size: 18px;
+}
+.button button:hover {
+  color: #000;
+  background-color: #fff;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+/* laps section */
+.laps {
+  margin: 0 auto;
+  list-style: none;
+  text-align: center;
+  font-size: 1.5rem;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+li {
+  padding: 0.5rem 0;
+}
+.time-stamp {
+  display: inline-block;
+  margin-left: 2rem;
+  width: 30%;
+}
+
+/* timer css */
+.timer {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  position: absolute;
+  top: 8.5rem;
+  left: 2rem;
+}
+.timer input {
+  font-size: 2.7rem;
+  width: 4rem;
+  height: 3rem;
+  text-align: center;
+  outline: none;
+  border: none;
+}
+.timer input[type="number"]::-webkit-outer-spin-button,
+.timer input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+::placeholder {
+  font-size: 25px;
+}
+.timer-btn {
+  top: 14rem;
+  right: 20rem;
+}
+
+/* ipad  */
+@media only screen and (max-width: 992px) {
+  /* stopwatch */
+  section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .button {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding: 1.5rem 0;
+    position: static;
+    justify-content: center;
+  }
+   .main a {
+    width: 41%;
+    }
+}
+/* mobile  */
+@media only screen and (max-width: 600px) {
+  .outer-circle {
+    background-color: #fff;
+    width: 19rem;
+    height: 19rem;
+  }
+  .inner-circle {
+    width: 18rem;
+    height: 18rem;
+  }
+  .time , .timer{
+    position: absolute;
+    top: 7.5rem;
+    left: 1.2rem;
+    font-size: 2.5rem;
+  }
+  .heading {
+    text-align: center;
+    padding: 1.5rem 0;
+    font-size: 2.2rem;
+  }
+  .main a {
+    width: 45%;
+    padding-top: 7px;
+    height: 3rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  .button {
+    gap: 2rem;
+    padding: 1.5rem 0;
+  }
+  .button button {
+    width: 5rem;
+  }
+  .laps {
+    width: 100%;
+  }
+  .time-stamp {
+    width: 50%;
+  }
+  .timer input {
+    font-size: 2.5rem;
+   
+}
+}
